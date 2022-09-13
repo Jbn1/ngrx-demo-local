@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {PayRatesService} from "../services/pay-rates.service";
 import {IPayRate} from "../models/IPayRate";
 
 @Component({
@@ -11,7 +10,7 @@ import {IPayRate} from "../models/IPayRate";
 export class AddPayRateComponent implements OnInit {
   formGroup: FormGroup;
 
-  constructor(private readonly payRatesService: PayRatesService) {
+  constructor() {
     this.formGroup = new FormGroup({
       id: new FormControl<number>(0, [Validators.required, Validators.min(1)]),
       caption: new FormControl<string | null>(null, Validators.required),
@@ -20,16 +19,11 @@ export class AddPayRateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.payRatesService.BehaviorSubject$.subscribe((payRates) => {
-      console.log(payRates);
-      console.log(payRates.length);
-    });
+
   }
 
   onSubmit() {
-    this.payRatesService.push(
-      this.formGroup.value as IPayRate
-    );
+
   }
 
   get idCtrl() {

@@ -2,9 +2,8 @@ import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {map, shareReplay, switchMap} from 'rxjs/operators';
-import {merge, Observable} from 'rxjs';
+import {merge, Observable, of} from 'rxjs';
 import {IPayRate} from "../models/IPayRate";
-import {PayRatesService} from "../services/pay-rates.service";
 
 /**
  * Data source for the PayRateTable view. This class should
@@ -16,9 +15,9 @@ export class PayRateTableDataSource extends DataSource<IPayRate> {
   sort: MatSort | undefined;
   data$: Observable<IPayRate[]>;
 
-  constructor(private payRateService: PayRatesService) {
+  constructor() {
     super();
-    this.data$  = this.payRateService.BehaviorSubject$.asObservable().pipe(shareReplay({refCount: true, bufferSize: 1}));
+    this.data$  = of([]);
   }
 
   /**
