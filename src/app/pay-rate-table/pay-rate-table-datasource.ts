@@ -1,7 +1,7 @@
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import {map, shareReplay, switchMap} from 'rxjs/operators';
+import {map, switchMap} from 'rxjs/operators';
 import {merge, Observable, of} from 'rxjs';
 import {IPayRate} from "../models/IPayRate";
 
