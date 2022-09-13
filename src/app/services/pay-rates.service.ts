@@ -9,8 +9,8 @@ export class PayRatesService {
 
   public BehaviorSubject$: BehaviorSubject<IPayRate[]>;
 
-  push = () => {
-    this.BehaviorSubject$.next(this.BehaviorSubject$.value.concat({ id: 3, caption: 'Lithium', value: 6.941 } as IPayRate));
+  push = (payRate: IPayRate) => {
+    this.BehaviorSubject$.next(this.BehaviorSubject$.value.concat(payRate));
   }
 
   constructor() {

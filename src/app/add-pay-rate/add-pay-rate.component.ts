@@ -27,7 +27,9 @@ export class AddPayRateComponent implements OnInit {
   }
 
   onSubmit() {
-    this.payRatesService.push();
+    this.payRatesService.push(
+      this.formGroup.value as IPayRate
+    );
   }
 
   get idCtrl() {
