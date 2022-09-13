@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {IPayRate} from "../models/IPayRate";
 
 @Component({
   selector: 'app-add-pay-rate',
@@ -23,7 +22,7 @@ export class AddPayRateComponent implements OnInit {
   }
 
   onSubmit() {
-
+    console.log(this.formGroup.value);
   }
 
   get idCtrl() {
