@@ -1,0 +1,36 @@
+<form class="example-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" >
+
+  <mat-card>
+    <mat-card-header>
+      <h2 class="form-title">Adding a new Pay Rate</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-grid-list cols="3" rowHeight="75px" style="width: 100%">
+        <mat-grid-tile  colspan="1">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Id</mat-label>
+            <input type="number" matInput [formControl]="idCtrl" placeholder="Id" >
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Caption</mat-label>
+            <input type="string" matInput [formControl]="captionCtrl" placeholder="Caption" >
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Value</mat-label>
+            <input type="number" matInput [formControl]="valueCtrl" placeholder="..." >
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="formGroup.invalid">Add</button>
+    </mat-card-actions>
+  </mat-card>
+
+</form>
