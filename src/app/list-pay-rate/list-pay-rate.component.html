@@ -1,0 +1,15 @@
+<mat-divider></mat-divider>
+
+<h2>PayRates</h2>
+<mat-list *ngIf="payRates$ | async as payRates; else loading">
+  <div mat-subheader>Pay Rates</div>
+  <mat-list-item *ngFor="let payRate of payRates">
+    <mat-icon mat-list-icon>euro symbol</mat-icon>
+    <div mat-line>{{payRate.caption}}</div>
+    <div mat-line> {{payRate.value}} </div>
+  </mat-list-item>
+</mat-list>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
