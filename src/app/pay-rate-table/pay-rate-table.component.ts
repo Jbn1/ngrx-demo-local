@@ -4,7 +4,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { PayRateTableDataSource } from './pay-rate-table-datasource';
 import {IPayRate} from "../models/IPayRate";
-import {PayRatesService} from "../services/pay-rates.service";
 
 @Component({
   selector: 'app-pay-rate-table',
@@ -19,8 +18,8 @@ export class PayRateTableComponent implements AfterViewInit {
 
   displayedColumns = ['id', 'caption', 'value'];
 
-  constructor(private payRatesService: PayRatesService) {
-    this.dataSource = new PayRateTableDataSource(payRatesService);
+  constructor() {
+    this.dataSource = new PayRateTableDataSource();
   }
 
   ngAfterViewInit(): void {
