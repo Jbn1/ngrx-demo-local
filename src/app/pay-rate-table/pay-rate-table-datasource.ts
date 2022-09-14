@@ -4,6 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import {map, switchMap} from 'rxjs/operators';
 import {merge, Observable, of} from 'rxjs';
 import {IPayRate} from "../models/IPayRate";
+import {Store} from "@ngrx/store";
+import {selectPayRates} from "../store/payRates.selector";
 
 /**
  * Data source for the PayRateTable view. This class should
@@ -15,13 +17,9 @@ export class PayRateTableDataSource extends DataSource<IPayRate> {
   sort: MatSort | undefined;
   data$: Observable<IPayRate[]>;
 
-  constructor() {
+  constructor(private store: Store) {
     super();
-    this.data$  = of([{
-      id: 1,
-      caption: 'test',
-      value: 1
-    }]);
+    this.data$  = store.select(selectPayRates);
   }
 
   /**

@@ -4,9 +4,9 @@
   </mat-card-header>
   <mat-card-content>
     <mat-list>
-      <mat-list-item> Total count: </mat-list-item>
-      <mat-list-item> Highest PayRate: </mat-list-item>
-      <mat-list-item> Lowest PayRate: </mat-list-item>
+      <mat-list-item> Total count: {{payRatesCount$ | async}}</mat-list-item>
+      <mat-list-item> Highest PayRate: {{lowestPayRates$ | async}} </mat-list-item>
+      <mat-list-item> Lowest PayRate: {{highestPayRates$ | async}}</mat-list-item>
     </mat-list>
   </mat-card-content>
 </mat-card>

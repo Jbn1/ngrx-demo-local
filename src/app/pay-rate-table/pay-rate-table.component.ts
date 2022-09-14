@@ -1,14 +1,17 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, ViewChild} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { PayRateTableDataSource } from './pay-rate-table-datasource';
 import {IPayRate} from "../models/IPayRate";
+import {Store} from "@ngrx/store";
+import {deletePayRate} from "../store/payRates.actions";
 
 @Component({
   selector: 'app-pay-rate-table',
   templateUrl: './pay-rate-table.component.html',
-  styleUrls: ['./pay-rate-table.component.less']
+  styleUrls: ['./pay-rate-table.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PayRateTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -18,8 +21,8 @@ export class PayRateTableComponent implements AfterViewInit {
 
   displayedColumns = ['id', 'caption', 'value', 'actions'];
 
-  constructor() {
-    this.dataSource = new PayRateTableDataSource();
+  constructor(private store: Store) {
+    this.dataSource = new PayRateTableDataSource(store);
   }
 
   ngAfterViewInit(): void {
@@ -29,6 +32,6 @@ export class PayRateTableComponent implements AfterViewInit {
   }
 
   delete(id: number): void {
-    console.log(id);
+    this.store.dispatch(deletePayRate({payRateId: id}));
   }
 }
