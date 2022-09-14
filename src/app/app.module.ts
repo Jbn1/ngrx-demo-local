@@ -24,6 +24,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatCardModule} from "@angular/material/card";
 import {MatBadgeModule} from "@angular/material/badge";
+import { StoreModule } from '@ngrx/store';
+import {appReducer} from "./app.state";
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import {MatBadgeModule} from "@angular/material/badge";
     MatPaginatorModule,
     MatSortModule,
     MatCardModule,
-    MatBadgeModule
+    MatBadgeModule,
+    StoreModule.forRoot(appReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]
