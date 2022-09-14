@@ -1,6 +1,6 @@
-import {PayRatesState} from "./store/payRates.state";
+import {PayRatesState} from "./store/pay-rates.state";
 import {ActionReducerMap} from "@ngrx/store";
-import {payRatesReducer} from "./store/payRates.reducer";
+import {payRatesReducer} from "./store/pay-rates.reducer";
 
 export interface AppState {
   payRates: PayRatesState;

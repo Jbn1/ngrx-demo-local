@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
-import {selectHighestPayRate, selectLowestPayRate, selectPayRates} from "../store/payRates.selector";
+import {selectHighestPayRate, selectLowestPayRate, selectPayRates} from "../store/pay-rates.selector";
 import {map} from "rxjs/operators";
 
 @Component({

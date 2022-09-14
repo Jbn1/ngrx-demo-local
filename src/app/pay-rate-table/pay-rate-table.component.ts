@@ -5,7 +5,7 @@ import { MatTable } from '@angular/material/table';
 import { PayRateTableDataSource } from './pay-rate-table-datasource';
 import {IPayRate} from "../models/IPayRate";
 import {Store} from "@ngrx/store";
-import {deletePayRate} from "../store/payRates.actions";
+import {deletePayRate} from "../store/pay-rates.actions";
 
 @Component({
   selector: 'app-pay-rate-table',

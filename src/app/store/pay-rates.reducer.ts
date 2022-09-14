@@ -1,6 +1,6 @@
 import {Action, createReducer, on} from '@ngrx/store';
-import * as payRatesActions from './payRates.actions';
-import {initialPayRatesState} from "./payRates.state";
+import * as payRatesActions from './pay-rates.actions';
+import {initialPayRatesState} from "./pay-rates.state";
 
 const _payRatesReducerInternal = createReducer(
   initialPayRatesState,

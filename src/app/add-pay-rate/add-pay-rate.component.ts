@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Store} from "@ngrx/store";
-import {addOrUpdatePayRate} from "../store/payRates.actions";
+import {addOrUpdatePayRate} from "../store/pay-rates.actions";
 
 @Component({
   selector: 'app-add-pay-rate',

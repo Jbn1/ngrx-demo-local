@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {PayRatesState, payRatesFeatureName} from "./payRates.state";
+import {PayRatesState, payRatesFeatureName} from "./pay-rates.state";
 
 export const payRatesFeatureSelector = createFeatureSelector<PayRatesState>(payRatesFeatureName);
 

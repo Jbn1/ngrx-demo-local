@@ -5,7 +5,7 @@ import {map, switchMap} from 'rxjs/operators';
 import {merge, Observable, of} from 'rxjs';
 import {IPayRate} from "../models/IPayRate";
 import {Store} from "@ngrx/store";
-import {selectPayRates} from "../store/payRates.selector";
+import {selectPayRates} from "../store/pay-rates.selector";
 
 /**
  * Data source for the PayRateTable view. This class should
