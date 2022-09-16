@@ -28,3 +28,7 @@ export const selectLowestPayRate = createSelector(
   }
 );
 
+export const selectPayRatesLoading = createSelector(
+  payRatesFeatureSelector,
+  (state: PayRatesState) => state.isLoading
+);

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from "rxjs";
+import {auditTime, debounce, debounceTime, Observable, of} from "rxjs";
 import {IPayRate} from "../models/IPayRate";
 
 @Injectable({
@@ -10,10 +10,6 @@ export class PayRatesService {
   constructor() { }
 
   getPayRates(): Observable<IPayRate[]> {
-    setTimeout(() => {
-      console.log('getPayRates');
-    }, 2000);
-
     return of([
       {
         id: 1,
@@ -35,6 +31,6 @@ export class PayRatesService {
         caption: 'Heures astreintes',
         value: 15
       }
-    ]);
+    ]).pipe(auditTime(2000));
   }
 }

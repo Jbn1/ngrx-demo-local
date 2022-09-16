@@ -25,6 +25,9 @@ import {MatCardModule} from "@angular/material/card";
 import {MatBadgeModule} from "@angular/material/badge";
 import { StoreModule } from '@ngrx/store';
 import {appReducer} from "./app.state";
+import {EffectsModule} from "@ngrx/effects";
+import {payRatesEffects} from "./store/pay-rates.state";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -53,7 +56,9 @@ import {appReducer} from "./app.state";
     MatSortModule,
     MatCardModule,
     MatBadgeModule,
-    StoreModule.forRoot(appReducer)
+    StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot(payRatesEffects),
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

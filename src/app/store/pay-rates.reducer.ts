@@ -38,6 +38,21 @@ const _payRatesReducerInternal = createReducer(
       ...state,
       payRates: []
     }
+  }),
+
+  on(payRatesActions.loadPayRates, (state) => {
+    return {
+      ...state,
+      isLoading: true
+    }
+  }),
+
+  on(payRatesActions.loadPayRatesSuccess, (state, { payRates }) => {
+    return {
+      ...state,
+      payRates: payRates,
+      isLoading: false
+    }
   })
 );
 
