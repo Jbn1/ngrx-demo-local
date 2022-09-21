@@ -16,7 +16,7 @@ export class PayRateTableComponent implements AfterViewInit {
   @ViewChild(MatTable) table!: MatTable<IPayRate>;
   dataSource: PayRateTableDataSource;
 
-  displayedColumns = ['id', 'caption', 'value'];
+  displayedColumns = ['id', 'caption', 'value', 'actions'];
 
   constructor() {
     this.dataSource = new PayRateTableDataSource();
@@ -26,5 +26,9 @@ export class PayRateTableComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+  }
+
+  delete(id: number): void {
+    console.log(id);
   }
 }

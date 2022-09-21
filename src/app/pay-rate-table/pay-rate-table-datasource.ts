@@ -17,7 +17,11 @@ export class PayRateTableDataSource extends DataSource<IPayRate> {
 
   constructor() {
     super();
-    this.data$  = of([]);
+    this.data$  = of([{
+      id: 1,
+      caption: 'test',
+      value: 1
+    }]);
   }
 
   /**
