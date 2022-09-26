@@ -8,7 +8,6 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { AddPayRateComponent } from './add-pay-rate/add-pay-rate.component';
 import { CounterPayRateComponent } from './counter-pay-rate/counter-pay-rate.component';
-import { ListPayRateComponent } from './list-pay-rate/list-pay-rate.component';
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
@@ -30,7 +29,6 @@ import {MatBadgeModule} from "@angular/material/badge";
     AppComponent,
     AddPayRateComponent,
     CounterPayRateComponent,
-    ListPayRateComponent,
     NavComponent,
     PayRateTableComponent,
   ],
