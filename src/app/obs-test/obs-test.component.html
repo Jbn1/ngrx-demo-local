@@ -1,0 +1,10 @@
+<div>
+  <div class="flex">
+    <button class="toggle-button" mat-button color="primary" (click)="onClick()">Toggle</button>
+    <div *ngIf="openToggleSubject$ | async" class="toggle-card">
+      text
+    </div>
+  </div>
+
+</div>
+

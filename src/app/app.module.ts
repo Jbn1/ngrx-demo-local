@@ -28,6 +28,7 @@ import {appReducer} from "./app.state";
 import {EffectsModule} from "@ngrx/effects";
 import {payRatesEffects} from "./store/pay-rates.state";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { ObsTestComponent } from './obs-test/obs-test.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     CounterPayRateComponent,
     NavComponent,
     PayRateTableComponent,
+    ObsTestComponent,
   ],
   imports: [
     BrowserModule,
